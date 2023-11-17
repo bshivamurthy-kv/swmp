@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /swmp/
+RewriteRule ^([^/\.]+)/?$ index.php?program=$1&id=$2 [QSA]
+#php_value upload_max_filesize 1000M
+#php_value post_max_size 1000M
+</IfModule>
