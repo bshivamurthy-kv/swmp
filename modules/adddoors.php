@@ -29,6 +29,9 @@ include('include/back.php');
           <div class="form-group">
           <label for="inputEmail3" class="text-capitalize"><a href="adddoors?type=new">Add New Door Type</a></label>
           </div>
+          <div class="form-group">
+          <label for="inputEmail3" class="text-capitalize"><a href="adddoors?type=2023">Add New Door Type 2023</a></label>
+          </div>
             <?php } ?> 
           <div class="form-group">
             <label for="inputEmail3" class="text-capitalize">Door Name</label>

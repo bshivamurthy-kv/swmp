@@ -92,8 +92,8 @@ class CommonFunction
 		  {
 			    $sql = "UPDATE $table SET `deleted` = '1' WHERE `$table`.`$delete` = $id";
 			   $query = mysqli_query($conection,$sql);
-			  $insert_id = mysqli_insert_id();
-		  	  return $insert_id;
+			 // $insert_id = mysqli_insert_id();
+		  	  return $query;
 		  }
 		  
 		  function commonselectconall($recd ,$table,$con,$orederby) 
