@@ -243,6 +243,28 @@ class CommonFunction
 		 		return "0";
 		 	}
 		 }
+
+
+		 function getmutilerecordsbyids($ids ,$table,$con,$id)
+		 {
+		 
+		 	 $sql = "SELECT * FROM $table WHERE `$id` IN ($ids)  AND `deleted` = '0'";
+		 	$query = mysqli_query($con,$sql);
+		 	$numrows = mysqli_num_rows($query);
+		 	if($numrows>0)
+		 	{
+		 		while($rows = mysqli_fetch_array($query))
+		 		{
+		 			$responce_rowsuser[]=$rows;
+		 				
+		 		}
+		 		return $responce_rowsuser;
+		 	}
+		 	else
+		 	{
+		 		return "0";
+		 	}
+		 }
 		 
 		 
 		 

@@ -42,7 +42,9 @@ var program = '<?php echo $_REQUEST['program'] ?>';
 var bFilter = true;
 $(document).ready(function() {
 	if($('#listResults').length){bFilter = true;}
-    $('#example').DataTable({
+	if(($('#listResults').length) || ($('#example').length))
+	{
+		$('#example').DataTable({
     	"bFilter": bFilter,
     	"bSort" : false
     	 
@@ -66,7 +68,9 @@ $(document).ready(function() {
             }
         ]
     	 
-        });    
+        });
+	}
+        
 
 
    

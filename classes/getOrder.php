@@ -610,7 +610,15 @@ if($_GET['pagename'] == 'getshops')
 
 if (@$pagename == 'ALLOrder') {
 
+	$getfiltersall = array(
+		'deleted' => '0',
+		'user_id'=>@$_SESSION['user_deatils']['id']
+
+);
 	
+
+$getfilters = $common->findByID($getfiltersall, ' tbl_assigndoors', $conection);
+$selectmaindoors1 = '('.$getfilters['doorlikename'].')';
 
 	
 
@@ -618,7 +626,7 @@ if (@$pagename == 'ALLOrder') {
 
 	$selectconall = array(
 
-			'Like' =>$selectmaindoors,
+			'Like' =>$selectmaindoors1,
 
 			'deleted' => '0'
 

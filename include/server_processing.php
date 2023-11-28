@@ -1,7 +1,19 @@
 <?php
 session_start();
 include "../include/config.php";
- 
+$dbconn=new config();
+$conection = $dbconn->dbconnection();
+include('../classes/class.commonfunction.php');
+$common = new CommonFunction();
+$getfiltersall = array(
+  'deleted' => '0',
+  'user_id'=>@$_SESSION['user_deatils']['id'].'|'.@$_SESSION['user_deatils']['name']
+
+);
+
+
+$getfilters = $common->findByID($getfiltersall, ' tbl_assigndoors', $conection);
+$selectmaindoors1 = '('.$getfilters['doorlikename'].')';
 /*
  * DataTables example server-side processing script.
  *
@@ -227,7 +239,7 @@ if($_GET['odredrlist']=='Mainorder' || $_GET['odredrlist']=='addOrder')
 {
    
   $whereAll = array(
-    'Like' =>$selectmaindoors
+    'Like' =>$selectmaindoors1
   );
   echo json_encode(
     SSP::complex( $_GET, $sql_details , $table, $primaryKey, $columns, $whereResult=null, $whereAll )

@@ -263,10 +263,10 @@
 							$.extend($.validator.defaults, settings);
 						},
 						messages : {
-							required : "Este campo es requerido",
-							remote : "Por favor corrija este campo",
-							email : "Por favor introduce una direcciÃ³n de correo electrÃ³nico vÃ¡lida.",
-							url : "Por favor introduzca una URL vÃ¡lida.",
+							required : "This field is required",
+							remote : "Please correct this field",
+							email : "Please enter a valid email address.",
+							url : "Please enter a valid URL.",
 							date : "Por favor introduzca una fecha vÃ¡lida.",
 							dateISO : "Por favor introduzca una fecha vÃ¡lida (ISO).",
 							number : "Por favor introduzca un nÃºmero vÃ¡lido",
